@@ -75,3 +75,4 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
 }
 
 export default RightSidebar
+export const RightSidebarMemo = React.memo(RightSidebar)

@@ -1,6 +1,6 @@
 import HeaderBox from '@/components/HeaderBox'
 import RecentTransactions from '@/components/RecentTransactions'
-import RightSidebar from '@/components/RightSidebar'
+import { RightSidebarMemo } from '@/components/RightSidebar'
 import TotalBalanceBox from '@/components/TotalBalanceBox'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { getAccount, getAccounts } from '@/lib/bank.actions'
@@ -45,7 +45,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
         />
       </div>
 
-      <RightSidebar
+      <RightSidebarMemo
         user={loggedIn}
         transactions={account?.transactions}
         banks={accountsData?.slice(0, 2)}
