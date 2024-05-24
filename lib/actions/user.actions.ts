@@ -117,7 +117,7 @@ export async function getLoggedInUser() {
 
     const user = await getUserInfo({ userId: result.$id })
 
-    return parseStringify(user)
+    return JSON.parse(JSON.stringify(user))
   } catch (error) {
     console.log(error)
     return null
