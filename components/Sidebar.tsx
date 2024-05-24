@@ -19,7 +19,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             alt="Banked logo"
             className="size-[24px] max-xl:size-14"
           />
-          <h1 className="sidebar-logo">Banked.</h1>
+          <h1 className="sidebar-logo">BANKED</h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive =

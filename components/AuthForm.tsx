@@ -74,16 +74,20 @@ const AuthForm = ({ type }: { type: string }) => {
             alt="Banked logo"
           />
           <h1 className="text-26 font-imb-plex-serif font-bold text-black-1">
-            Banked.
+            BANKED
           </h1>
         </Link>
         <div className="flex flex-col gap-1 md:gap-3">
           <h1 className="text-24 lg:36 font-semibold text-gray-900">
-            {user ? 'Link Account' : type === 'sign-in' ? 'Sign In' : 'Sign up'}
-            <p className="text-16 font-normal text-gray-600">
+            {user
+              ? 'Link Account'
+              : type === 'sign-in'
+                ? 'Welcome back.'
+                : 'Not already there?'}
+            <p className="text-16 font-normal text-gray-600 mt-2">
               {user
                 ? 'Link your account to get started'
-                : 'please enter your details'}
+                : 'please enter your email and password'}
             </p>
           </h1>
         </div>
@@ -96,7 +100,7 @@ const AuthForm = ({ type }: { type: string }) => {
         <>
           {' '}
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
               {type === 'sign-up' && (
                 <>
                   <div className="flex gap-4">
@@ -131,13 +135,13 @@ const AuthForm = ({ type }: { type: string }) => {
                       control={form.control}
                       name="state"
                       label="State"
-                      placeholder="Enter your state"
+                      placeholder="Example: US"
                     />
                     <CustomInput
                       control={form.control}
                       name="postalCode"
                       label="Postal Code"
-                      placeholder="Enter your postal code"
+                      placeholder="Example : 75000"
                     />
                   </div>
                   <div className="flex gap-4">
