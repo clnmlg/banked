@@ -69,22 +69,28 @@ const AuthForm = ({ type }: { type: string }) => {
         <Link href="/" className="flex cursor-pointer items-center gap-1 mb-3">
           <Image
             src="/icons/logo.svg"
-            width={34}
-            height={34}
+            width={50}
+            height={50}
             alt="Banked logo"
           />
           <h1 className="text-26 font-imb-plex-serif font-bold text-black-1">
-            BANKED
+            BANKED™
           </h1>
         </Link>
         <div className="flex flex-col gap-1 md:gap-3">
-          <h1 className="text-24 lg:36 font-semibold text-gray-900">
-            {user
-              ? 'Link Account'
-              : type === 'sign-in'
-                ? 'Welcome back.'
-                : 'Not already there?'}
-            <p className="text-16 font-normal text-gray-600 mt-2">
+          <h1 className="text-24 lg:36 font-semibold ">
+            {user ? (
+              'Link Account'
+            ) : type === 'sign-in' ? (
+              <div className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
+                Welcome back
+              </div>
+            ) : (
+              <div className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-500">
+                Not already there?
+              </div>
+            )}
+            <p className="text-16 font-normal bg-gradient-to-r mt-2">
               {user
                 ? 'Link your account to get started'
                 : 'please enter your email and password'}
@@ -200,6 +206,10 @@ const AuthForm = ({ type }: { type: string }) => {
                 {type === 'sign-in' ? 'Sign-up' : 'Sign-in'}
               </Link>
             </footer>
+            <div className="text-10 font-normal text-gray-600">
+              When connecting to the platfom you agree to the Banked Developer
+              Terms of Service and the Banked Privacy Policy.
+            </div>
           </Form>
         </>
       )}
